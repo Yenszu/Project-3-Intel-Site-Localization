@@ -5,7 +5,8 @@ body {
 
 .hero {
 	min-height: 70vh;
-	padding: 4rem 1.5rem;
+	padding-block: 4rem;
+	padding-inline: 1.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -26,7 +27,8 @@ body {
 	display: block;
 	width: 180px;
 	height: auto;
-	margin: 0 auto 2rem;
+	margin-inline: auto;
+	margin-block-end: 2rem;
 }
 
 .hero h1 {
@@ -37,7 +39,8 @@ body {
 
 .hero p {
 	max-width: 650px;
-	margin: 1.5rem auto 0;
+	margin-block-start: 1.5rem;
+	margin-inline: auto;
 	font-size: 1.1rem;
 	line-height: 1.7;
 }
@@ -47,7 +50,8 @@ body {
 	display: flex;
 	gap: 1.5rem;
 	overflow-x: auto;
-	padding: 2rem 1.5rem;
+	padding-block: 2rem;
+	padding-inline: 1.5rem;
 }
 
 /* A fixed flex-basis gives every card the same width and prevents shrinking. */
@@ -124,7 +128,8 @@ body {
 
 .timeline-instruction {
 	margin: 0;
-	padding: 1rem 1.5rem 2rem;
+	padding-block: 1rem 2rem;
+	padding-inline: 1.5rem;
 	color: #16324f;
 	text-align: center;
 	font-size: 1rem;
@@ -133,6 +138,219 @@ body {
 
 .timeline-instruction-mobile {
 	display: none;
+}
+
+/* The new cards extend the existing Intel blue and white visual style. */
+.sustainability-highlights {
+	padding-block: 2rem 4rem;
+	padding-inline: 1.5rem;
+	color: #16324f;
+	background-color: #eaf4fb;
+}
+
+/* Keep the Bootstrap column behavior available if the CDN stylesheet is unavailable. */
+.sustainability-highlights .row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sustainability-highlights .col-12 {
+	box-sizing: border-box;
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+@media (min-width: 768px) {
+	.sustainability-highlights .col-md-4 {
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+}
+
+.sustainability-card {
+	height: 100%;
+	padding: 2rem;
+	text-align: center;
+	background-color: white;
+	border-top: 4px solid #0071c5;
+	box-shadow: 0 4px 14px rgba(0, 59, 104, 0.15);
+}
+
+.sustainability-icon {
+	display: block;
+	margin-bottom: 1rem;
+	color: #0071c5;
+	font-size: 2.5rem;
+}
+
+.sustainability-card h3 {
+	margin-bottom: 0.75rem;
+	color: #003b68;
+	font-size: 1.5rem;
+}
+
+.sustainability-card p {
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+}
+
+.learn-more-link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	padding-block: 0.5rem;
+	padding-inline: 0.75rem;
+	font-weight: bold;
+	color: #0071c5;
+	text-decoration: none;
+}
+
+.learn-more-link:hover,
+.learn-more-link:focus {
+	color: #003b68;
+	text-decoration: underline;
+}
+
+/* Keep the newsletter form readable and centered below the priorities section. */
+.newsletter-signup {
+	padding-block: 3rem 4rem;
+	padding-inline: 1.5rem;
+	color: #16324f;
+	background-color: white;
+}
+
+.newsletter-panel {
+	box-sizing: border-box;
+	margin-inline: auto;
+	padding: 2rem;
+	border-top: 4px solid #0071c5;
+	box-shadow: 0 4px 14px rgba(0, 59, 104, 0.15);
+}
+
+.newsletter-intro {
+	text-align: center;
+}
+
+.newsletter-intro h2 {
+	margin-bottom: 0.75rem;
+	color: #003b68;
+	font-size: 2rem;
+}
+
+.newsletter-intro p {
+	margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+	width: 100%;
+	max-width: 600px;
+	margin-inline: auto;
+	text-align: start;
+}
+
+.newsletter-form-content {
+	width: 100%;
+}
+
+.newsletter-form .form-label,
+.newsletter-form .form-control,
+.newsletter-form .form-text,
+.newsletter-form .btn {
+	display: block;
+	box-sizing: border-box;
+}
+
+.newsletter-form .form-label {
+	margin-bottom: 0.5rem;
+	color: #16324f;
+	font-weight: bold;
+}
+
+.newsletter-form .form-control {
+	width: 100%;
+	margin-bottom: 0.5rem;
+	padding: 0.75rem 1rem;
+	color: #16324f;
+	background-color: white;
+	border: 2px solid #7895aa;
+	border-radius: 0.375rem;
+}
+
+.newsletter-form .form-control:focus {
+	border-color: #0071c5;
+	box-shadow: 0 0 0 0.2rem rgba(0, 113, 197, 0.25);
+}
+
+.newsletter-form .form-text {
+	margin-bottom: 0;
+	color: #36556f;
+}
+
+.newsletter-form .btn {
+	min-height: 44px;
+	margin-top: 1rem;
+	padding: 0.75rem 1.5rem;
+	color: white;
+	background-color: #0071c5;
+	border: 0;
+	border-radius: 0.375rem;
+}
+
+.newsletter-form .btn:hover,
+.newsletter-form .btn:focus {
+	background-color: #003b68;
+}
+
+/* The footer uses Intel dark blue with high-contrast, keyboard-friendly links. */
+.site-footer {
+	padding-block: 3rem;
+	padding-inline: 1.5rem;
+	color: white;
+	background-color: #003b68;
+}
+
+.site-footer .container {
+	width: 100%;
+	max-width: 1100px;
+	margin-inline: auto;
+}
+
+.site-footer p {
+	line-height: 1.5;
+}
+
+.footer-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.footer-link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	padding-block: 0.5rem;
+	padding-inline: 0.75rem;
+	color: white;
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+	color: #b9e6ff;
+	text-decoration-thickness: 2px;
+}
+
+@media (max-width: 767.98px) {
+	.site-footer .footer-content {
+		text-align: center;
+	}
+
+	.footer-nav {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 /* Smaller spacing and type keep the hero balanced on narrow screens. */
