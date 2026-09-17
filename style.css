@@ -1,0 +1,195 @@
+/* The hero fills most of the first screen and centers its content. */
+body {
+	margin: 0;
+}
+
+.hero {
+	min-height: 70vh;
+	padding: 4rem 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: white;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	background: linear-gradient(135deg, #0071c5 0%, #005b9f 55%, #003b68 100%);
+}
+
+/* This keeps the text comfortable to read on wide screens. */
+.hero-content {
+	width: 100%;
+	max-width: 850px;
+}
+
+/* Width changes the logo size while height stays automatic for its aspect ratio. */
+.hero-logo {
+	display: block;
+	width: 180px;
+	height: auto;
+	margin: 0 auto 2rem;
+}
+
+.hero h1 {
+	margin: 0;
+	font-size: clamp(2.25rem, 6vw, 5rem);
+	line-height: 1.1;
+}
+
+.hero p {
+	max-width: 650px;
+	margin: 1.5rem auto 0;
+	font-size: 1.1rem;
+	line-height: 1.7;
+}
+
+/* Keep the timeline cards in one row with consistent spacing and horizontal scrolling. */
+.timeline {
+	display: flex;
+	gap: 1.5rem;
+	overflow-x: auto;
+	padding: 2rem 1.5rem;
+}
+
+/* A fixed flex-basis gives every card the same width and prevents shrinking. */
+.timeline-card {
+	box-sizing: border-box;
+	flex: 0 0 280px;
+	padding: 1.5rem;
+	border-radius: 12px;
+	color: #16324f;
+	background-color: white;
+	box-shadow: 0 4px 14px rgba(0, 59, 104, 0.18);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.timeline-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 10px 24px rgba(0, 59, 104, 0.3);
+}
+
+.timeline-card p {
+	opacity: 0;
+	transition: opacity 180ms ease;
+}
+
+.timeline-card:not(.timeline-card-with-image):hover p {
+	opacity: 1;
+}
+
+.timeline-image-container {
+	position: relative;
+	margin: 1rem 0;
+	overflow: hidden;
+}
+
+.timeline-image-container .timeline-image {
+	margin: 0;
+	transition: filter 180ms ease;
+}
+
+.timeline-card .timeline-image-container p {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 1rem;
+	color: white;
+	background-color: rgba(0, 59, 104, 0.72);
+	opacity: 0;
+}
+
+.timeline-image-container:hover .timeline-image {
+	filter: brightness(45%);
+}
+
+.timeline-card .timeline-image-container:hover p {
+	opacity: 1;
+}
+
+.timeline-card h2 {
+	margin-top: 0;
+	color: #0071c5;
+}
+
+.timeline-image {
+	display: block;
+	width: 100%;
+	height: 160px;
+	margin: 1rem 0;
+	object-fit: contain;
+	background-color: #eaf4fb;
+}
+
+.timeline-instruction {
+	margin: 0;
+	padding: 1rem 1.5rem 2rem;
+	color: #16324f;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.timeline-instruction-mobile {
+	display: none;
+}
+
+/* Smaller spacing and type keep the hero balanced on narrow screens. */
+@media (max-width: 600px) {
+	.hero {
+		min-height: 60vh;
+		padding: 3rem 1.25rem;
+	}
+
+	.hero-logo {
+		width: 140px;
+		margin-bottom: 1.5rem;
+	}
+
+	.hero p {
+		font-size: 1rem;
+	}
+
+	.timeline {
+		flex-direction: column;
+		overflow-x: hidden;
+	}
+
+	.timeline-card {
+		flex: 0 0 auto;
+		width: 100%;
+		height: auto;
+		overflow: visible;
+	}
+
+	.timeline-card p {
+		opacity: 1;
+	}
+
+	.timeline-card .timeline-image-container p {
+		position: static;
+		display: block;
+		padding: 0;
+		color: #16324f;
+		background-color: transparent;
+		opacity: 1;
+	}
+
+	.timeline-image {
+		height: auto;
+		object-fit: initial;
+	}
+
+	.timeline-instruction {
+		padding: 1rem 1.25rem 1.5rem;
+	}
+
+	.timeline-instruction-desktop {
+		display: none;
+	}
+
+	.timeline-instruction-mobile {
+		display: inline;
+	}
+}
